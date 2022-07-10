@@ -1,0 +1,13 @@
+---
+ - hosts: all
+   become: true
+   tasks:
+
+   - name: copy file from ansible to nodes
+     copy:
+       src: inventory
+       dest: /home/index.html
+       owner: root
+       group: root
+       mode: 0644
+
