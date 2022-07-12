@@ -1,0 +1,5 @@
+- name: Apache installation (Ubuntu)
+  tags: apache,ubuntu
+  apt:
+    update_cache: yes
+  when: ansible_distribution == "Ubuntu"
