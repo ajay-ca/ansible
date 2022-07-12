@@ -1,7 +1,7 @@
 - name: Apache installation (CentOS)
   tags: httpd,apache,centos
   yum:
-    update_cache: yes
+    name: httpd
     state: latest
   when: ansible_distribution == "CentOS"
 
@@ -13,7 +13,7 @@
     enabled: yes
   when: ansible_distribution == "CentOS"
 
-- name: start httpd (CentOS)
+- name: copy httpd index file (CentOS)
   tags: httpd,apache,centos
   copy:
     src: default_site.html
