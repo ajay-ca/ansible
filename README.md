@@ -2,7 +2,5 @@
 
 Testing for ansible
 
+utilised version control (GIT), ad-hoc commands, playbooks, tags, file management, service management, roles and taskbooks
 
-
-Checking whether the changes are affecting
-Modification #2
