@@ -3,33 +3,17 @@
 
 - hosts: all
   become: true
-  tasks:
+  roles:
+    - base
+ 
 
-  - name: update repository index
-    tags: centos
-    yum:
-      update_cache: yes
-    when: ansible_distribution == "CentOS"
+- hosts: centos
+  become: true
+  roles:
+    - centos
 
+- hosts: ubuntu
+  become: true
+  roles:
+    - ubuntu
 
-  - name: install apache2 package
-    yum:
-      name: httpd
-      state: latest
-    when: ansible_distribution == "CentOS"
-
-
-  - name: start http(CentOS)
-    tags: apache,httpd,centos
-    service:
-      name: httpd
-      state: started
-    when: ansible_distribution == "CentOS"
-
-
-  - name: installing nmap
-    tags: centos,nmap   
-    yum:
-      name: nmap
-      state: latest
-    when: ansible_distribution == "CentOS"
