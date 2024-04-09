@@ -1,0 +1,24 @@
+---
+- name: Install Nginx
+  apt:
+    name: nginx
+    state: present
+  notify: restart nginx
+
+- name: Copy Nginx configuration file
+  template:
+    src: nginx.conf.j2
+    dest: "{{ nginx_config_file }}"
+  notify: restart nginx
+
+- name: Copy Nginx default web file
+  copy:
+    src: .
+    dest: "{{ nginx_index_file }}"
+  # notify: restart nginx
+
+- name: Ensure Nginx service is started
+  service:
+    name: "{{ nginx_service_name }}"
+    state: started
+    enabled: yes

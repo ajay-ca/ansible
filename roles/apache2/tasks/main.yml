@@ -1,0 +1,17 @@
+---
+- name: Install Apache2
+  apt:
+    name: apache2
+    state: present
+  notify: restart apache2
+
+- name: Copy Apache default web file
+  copy:
+    src: .
+    dest: "{{ apache_index_file }}"
+
+- name: Ensure Apache2 service is started
+  service:
+    name: "{{ apache2_service_name }}"
+    state: started
+    enabled: yes

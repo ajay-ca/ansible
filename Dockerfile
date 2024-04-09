@@ -21,4 +21,5 @@ RUN mkdir /var/run/sshd && \
 EXPOSE 22
 
 # Run SSH
-CMD ["/usr/sbin/sshd", "-D"]
+# ENTRYPOINT [ "service", "ssh", "start" ]
+# CMD ["sleep", "1m"]

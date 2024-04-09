@@ -1,19 +1,28 @@
-# Ubuntu servers for Ansible project
+# Creating Ubuntu containers for Ansible project
 
 version: "3"
 
 services:
   server-1:
+    build: 
+      context: .
+      dockerfile: Dockerfile
     image: ansible:ubuntu
     container_name: server-1
     command: tail -f /dev/null
     
   server-2:
+    build: 
+      context: .
+      dockerfile: Dockerfile
     image: ansible:ubuntu
     container_name: server-2
     command: tail -f /dev/null
 
   server-3:
+    build: 
+      context: .
+      dockerfile: Dockerfile
     image: ansible:ubuntu
     container_name: server-3
     command: tail -f /dev/null
