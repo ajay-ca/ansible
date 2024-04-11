@@ -1,3 +1,6 @@
+# Ignore Ansible Config files
+*.cfg
+
 # Ignore Ansible log files
 *.log
 
