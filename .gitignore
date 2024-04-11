@@ -1,0 +1,11 @@
+# Ignore Ansible log files
+*.log
+
+# Ignore compiled Python files
+*.pyc
+
+# Ignore local inventory files
+inventory
+
+# Ignore temporary files
+*.retry
