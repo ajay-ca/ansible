@@ -1,6 +1,0 @@
----
-
-- name: Install Apache2
-  hosts: webservers
-  roles:
-    - apache2

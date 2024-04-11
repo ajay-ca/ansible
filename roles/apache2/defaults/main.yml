@@ -1,3 +1,0 @@
----
-apache2_service_name: apache2
-apache_index_file: /var/www/html/

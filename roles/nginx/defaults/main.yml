@@ -1,5 +1,0 @@
----
-nginx_config_dir: /etc/nginx
-nginx_config_file: "{{ nginx_config_dir }}/nginx.conf"
-nginx_service_name: nginx
-nginx_index_file: /var/www/html/
